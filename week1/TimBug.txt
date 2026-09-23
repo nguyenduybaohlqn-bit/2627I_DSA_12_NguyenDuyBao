@@ -1,0 +1,18 @@
+Chọn testcase n = 3 leader = [0, 1, 2]
+ n = 3, ban đầu ta có:
+leader = [0, 1, 2]
+Thực hiện hai phép toán:
+union(2, 1)
+union(1, 0)
+Sau phép union(2, 1), mảng leader trở thành:
+[0, 1, 1]
+Do đó các phần tử 1 và 2 thuộc cùng một tập hợp.
+Tiếp tục thực hiện union(1, 0). Theo yêu cầu của phép union, cả phần tử 1 và 2 đều phải được chuyển sang tập hợp có leader là 0. Vì vậy kết quả đúng phải là:
+[0, 0, 0]
+Tuy nhiên, do trong vòng lặp giá trị leader[1] bị thay đổi từ 1 thành 0, khi xét đến i = 2, chương trình lại kiểm tra leader[2] == leader[1], tức là 1 == 0, nên không thay đổi leader[2].
+Kết quả thực tế là:
+[0, 0, 1]
+Khi đó:
+find(1) = 0
+find(2) = 1
+mặc dù 1 và 2 phải thuộc cùng một tập hợp.

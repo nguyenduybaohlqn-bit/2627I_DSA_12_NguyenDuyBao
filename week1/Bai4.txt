@@ -1,0 +1,23 @@
+Ta có:
+1 -> 0
+2 -> 0
+3 -> 0
+nên cây có root 0, kích thước cây là 4.
+Ta có:
+5 -> 4
+6 -> 4
+7 -> 5 -> 4
+nên cây có root 4, kich thước cây là 4.
+Cuối cùng:
+9 -> 8
+nên 8 hiện đang là root của một cây, kích thước là 2.
+Trong weighted quick union, khi nối hai cây:
+Cây nhỏ hơn sẽ được nối vào root của cây lớn hơn.
+Cây chứa 8,9 có size 2.
+Hai cây hiện có size 4 là:
+cây root 0: size 4
+cây root 4: size 4
+Do đó cây {8,9} có thể được nối vào 0 hoặc 4.
+Vì vậy: parent[8] = 0 hoặc parent[8] = 4 đều hợp lệ.
+Ngoài ra, nếu chưa thực hiện union nào với cây {8,9}, thì: parent[8] = 8 cũng hợp lệ.
+Đáp án : parent[8] ∈ {0, 4, 8}
